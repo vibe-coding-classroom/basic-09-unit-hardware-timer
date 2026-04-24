@@ -1,5 +1,3 @@
-Viewed basic-09-unit-hardware-timer.html:1-386
-
 針對 **`basic-09-unit-hardware-timer` (精通硬體定時器與 ISR 中斷服務)** 單元，這是學員建立「實時系統 (Real-time System)」思維的門檻課程。它要求學員具備 **優先權搶佔 (Priority Preemption)** 的架構觀念，學習如何利用硬體定時器超越 `millis()` 的極限，並掌握 **ISR (中斷服務程序)** 的三大禁忌與 `volatile` 記憶體可見性防護。
 
 以下是在 **GitHub Classroom** 部署其作業 (Assignments) 的具體建議：
