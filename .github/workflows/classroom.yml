@@ -1,0 +1,34 @@
+name: GitHub Classroom Workflow
+on: [push]
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  build:
+    name: Autograding
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          
+      - name: Run Static Analysis Grading
+        id: static-analysis
+        run: |
+          python3 tests/verify_solution.py
+          
+      - name: Setup PlatformIO
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install PlatformIO
+        run: |
+          python3 -m pip install -U platformio
+          
+      - name: Compile Project
+        run: |
+          pio run
